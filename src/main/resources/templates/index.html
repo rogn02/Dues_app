@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Due Management System</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<div class = "container my-2">
+
+<h1> Dues List </h1>
+<form action = "#" th:action="@{/authLogin}" th:object = "${logins}">
+
+	
+	<input type = "text" th:field = "*{username}" placeholder = "Username" class = "form-control mb-4 col-4" required>
+	<input type = "password" th:field = "*{password}" placeholder = "Password" class = "form-control mb-4 col-4" required>
+	<button type = "submit" class = "btn btn-info col-2"> Save </button>
+</form>
+<!-- 
+<a th:href = "@{/showNewDueForm}" class = 'btn btn-primary btn-sm mb-3'>Add Due</a>
+	<table border = "1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>Bill ID</th>
+				<th>Domain</th>
+				<th>Description</th>
+				<th>Amount</th>
+				<th>Due Date</th>
+				<th>Status</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="due : ${listDues}">
+				<td th:text = "${due.bill_id}"></td>
+				<td th:text = "${due.domain}"></td>
+				<td th:text = "${due.description}"></td>
+				<td th:text = "${due.amount}"></td>
+				<td th:text = "${due.dueDate}"></td>
+				<td th:text = "${due.status}"></td>
+				<td>
+					<a th:href="@{/showFormForUpdate/{id}(id=${due.id})}" class="btn btn-primary">Update</a>
+					<a th:href="@{/deleteDue/{id}(id=${due.id})}" class="btn btn-danger">Delete</a>
+					<a th:href="@{/completeDue/{id}(id=${due.id})}" class="btn btn-success">Clear</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+-->
+</div>
+
+</body>
+</html>

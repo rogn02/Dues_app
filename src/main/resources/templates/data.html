@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Due Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+<div class = "container my-2">
+
+<h1> Active Requests </h1>
+<a th:href = "@{/showNewDueForm}" class = 'btn btn-primary btn-sm mb-3'>Add Request</a>
+	<table border = "1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Date Submitted</th>
+				<th>Accounts Status</th>
+				<th>Library Status</th>
+				<th>Certification</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="due : ${listDues}">
+				<td th:text = "${due.id}"></td>
+				<td th:text = "${due.DateSubmitted}"></td>
+				<td th:text = "${due.AccountsStatus}"></td>
+				<td th:text = "${due.LibraryStatus}"></td>
+				<td th:text = "${due.Certified}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+<br>
+<br>
+<br>
+<div class = "container my-2">
+<h1> Rejected Requests </h1>
+<br>
+<table border = "1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Date Submitted</th>
+				<th>Accounts Status</th>
+				<th>Library Status</th>
+				<th>Certification</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="due : ${listDuesRejected}">
+				<td th:text = "${due.id}"></td>
+				<td th:text = "${due.DateSubmitted}"></td>
+				<td th:text = "${due.AccountsStatus}"></td>
+				<td th:text = "${due.LibraryStatus}"></td>
+				<td th:text = "${due.Certified}"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>
